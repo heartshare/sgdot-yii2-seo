@@ -3,7 +3,7 @@ sgdot-yii2-seo
 
 yii2 seo widget
 
-seo migrate 
+migrate 
 ``` php
     public function up() {
         $this->createTable('seo', [
@@ -19,4 +19,11 @@ seo migrate
     public function down() {
         $this->dropTable('seo');
     }
+```
+
+
+use
+
+``` php
+echo Seo::widget('modelClass'=>SeoModel::classname());
 ```
