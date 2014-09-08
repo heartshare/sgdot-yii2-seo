@@ -1,0 +1,19 @@
+{
+     "name": "vendor/sgdot",
+     "description": "Yii2 Seo widget",
+     "authors": [
+         {
+             "name": "Sergei Gulin",
+             "email": "gulin.sergi@ya.ru"
+         }
+     ],
+     "minimum-stability": "dev",
+     "require": {
+         "php": ">=5.4.0"
+     },
+     "autoload": {
+         "psr-0": {
+             "sgdot\seo": "sgdot/"
+         }
+     }
+ }
