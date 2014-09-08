@@ -12,23 +12,40 @@ class Seo extends Widget {
     
     public function run() {
         parent::run();
-        /* @var $view \yii\web\View */
-        $view = \Yii::$app->getView();
+        
         $seo = $this->getSeo();
         if (is_null($seo)) {
             echo Html::tag('title', $view->title) . PHP_EOL;
         } else {
             echo Html::tag('title', $seo->title) . PHP_EOL;
+            $this->registerMetaTag('keywords', $seo->keywords);
+            $this->registerMetaTag('description', $seo->description);
+            $view->registerLinkTag('image_src', $seo->image_src);
+        }
+    }
+    
+    pulic function registerMegaTag($name, $content) {
+        if(!empty($content)) {
+            /* @var $view \yii\web\View */
+            $view = \Yii::$app->getView();
             $view->registerMetaTag([
-                'name' => 'keywords',
-                'content' => $seo->keywords,
-            ]);
-            $view->registerMetaTag([
-                'name' => 'description',
-                'content' => $seo->description,
+                'name' => $name,
+                'content' => $content,
             ]);
         }
     }
+    
+    pulic function registerLinkTag($rel, $href) {
+        if(!empty($href)) {
+            /* @var $view \yii\web\View */
+            $view = \Yii::$app->getView();
+            $view->registerLinkTag(
+                'rel'=>$rel,
+                'href'=>$href,
+            ]);
+        }
+    }
+    
     public function getSeo() {
         /* @var $request yii\web\Request */
         $request = Yii::$app->request;
