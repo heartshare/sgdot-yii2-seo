@@ -24,7 +24,7 @@ class Seo extends Widget {
         }
     }
     
-    pulic function registerMegaTag($name, $content) {
+    public function registerMegaTag($name, $content) {
         if(!empty($content)) {
             /* @var $view \yii\web\View */
             $view = \Yii::$app->getView();
@@ -35,7 +35,7 @@ class Seo extends Widget {
         }
     }
     
-    pulic function registerLinkTag($rel, $href) {
+    public function registerLinkTag($rel, $href) {
         if(!empty($href)) {
             /* @var $view \yii\web\View */
             $view = \Yii::$app->getView();
