@@ -39,7 +39,7 @@ class Seo extends Widget {
         if(!empty($href)) {
             /* @var $view \yii\web\View */
             $view = \Yii::$app->getView();
-            $view->registerLinkTag(
+            $view->registerLinkTag([
                 'rel'=>$rel,
                 'href'=>$href,
             ]);
