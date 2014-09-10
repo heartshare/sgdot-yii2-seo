@@ -20,13 +20,13 @@ class Seo extends Widget {
             echo Html::tag('title', $view->title) . PHP_EOL;
         } else {
             echo Html::tag('title', $seo->title) . PHP_EOL;
-            $view->registerMetaTag('keywords', $seo->keywords);
-            $view->registerMetaTag('description', $seo->description);
-            $view->registerLinkTag('image_src', $seo->image_src);
+            $this->registerMetaTag('keywords', $seo->keywords);
+            $this->registerMetaTag('description', $seo->description);
+            $this->registerLinkTag('image_src', $seo->image_src);
         }
     }
     
-    public function registerMegaTag($name, $content) {
+    public function registerMetaTag($name, $content) {
         if(!empty($content)) {
             /* @var $view \yii\web\View */
             $view = \Yii::$app->getView();
