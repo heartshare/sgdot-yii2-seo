@@ -20,8 +20,8 @@ class Seo extends Widget {
             echo Html::tag('title', $view->title) . PHP_EOL;
         } else {
             echo Html::tag('title', $seo->title) . PHP_EOL;
-            $this->registerMetaTag('keywords', $seo->keywords);
-            $this->registerMetaTag('description', $seo->description);
+            $view->registerMetaTag('keywords', $seo->keywords);
+            $view->registerMetaTag('description', $seo->description);
             $view->registerLinkTag('image_src', $seo->image_src);
         }
     }
