@@ -14,6 +14,8 @@ class Seo extends Widget {
         parent::run();
         
         $seo = $this->getSeo();
+        /* @var $view \yii\web\View */
+        $view = \Yii::$app->getView();
         if (is_null($seo)) {
             echo Html::tag('title', $view->title) . PHP_EOL;
         } else {
